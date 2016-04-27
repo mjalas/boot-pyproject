@@ -1,0 +1,32 @@
+# Sublime project files
+*.sublime-project
+*.sublime-workspace
+
+# Jetbrains IDE files
+.idea/
+
+# Virtual environments
+.env
+.venv
+
+__pycache__*
+
+# Compiled python modules.
+*.pyc
+
+# Setuptools distribution folder.
+/dist/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
+/*.egg
+
+/build/
+
+# Tox files
+.tox/
+
+# Coverage
+.coverage
+htmlcov/
+cover/
