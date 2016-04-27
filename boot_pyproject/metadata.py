@@ -1,0 +1,7 @@
+NAME = 'boot-pyproject'
+VERSION = '0.0.1'
+DESCRIPTION = 'Bootstrap python project'
+URL = 'https://github.com/mjalas/boot-pyproject'
+AUTHOR = 'Mats Jalas'
+AUTHOR_EMAIL = 'mats.jalas@gmail.com'
+LICENSE = 'GNU GPLv3'
