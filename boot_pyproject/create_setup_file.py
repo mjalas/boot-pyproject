@@ -1,7 +1,7 @@
 import json
 
 
-class SetupFileBuilder(object):
+class SetupTemplateBuilder(object):
 
     @staticmethod
     def build():
