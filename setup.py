@@ -30,8 +30,13 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.5',
     ],
-    packages=find_packages(exclude=[]),
-    setup_requires=['nose>=1.0', 'coverage>=4.0.3', 'pypandoc>=1.1.3'],
-    test_suite='nose.collector',
-    tests_require=['nose']
+    packages=find_packages(exclude=metadata.EXCLUDE),
+    setup_requires=metadata.SETUP_REQUIRES,
+    test_suite=metadata.TEST_SUITE,
+    tests_require=metadata.TESTS_REQUIRE,
+    entry_points={
+        'console_scripts': [
+            'generate-json=scripts.generate_yaml:main',
+        ],
+    },
 )
