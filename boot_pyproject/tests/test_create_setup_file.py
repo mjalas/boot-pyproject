@@ -23,6 +23,16 @@ class TestSetupTemplateBuilder(TestCase):
                 "TEST_SUITE": "nose.collector",
                 "TESTS_REQUIRES": ["nose"],
                 "INSTALL_REQUIRES": []
+            },
+            "license": {
+                "name": "",
+                "name_comment": "Name options: MIT, GNU GPLv3",
+                "file": "",
+                "file_comment": "File options: MIT, GPL3"
+            },
+            "readme": {
+                "header": "",
+                "description": ""
             }
         }
 
