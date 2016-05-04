@@ -12,7 +12,5 @@ CLASSIFIERS = [
                   'License :: OSI Approved :: MIT License',
                   'Programming Language :: Python :: 3.5',
               ],
-EXCLUDE = [],
-SETUP_REQUIRES = ['nose>=1.0', 'coverage>=4.0.3', 'pypandoc>=1.1.3'],
-TEST_SUITE = 'nose.collector',
-TESTS_REQUIRE = ['nose']
+SETUP_REQUIRES = ['nose>=1.0', 'coverage>=4.0.3', 'pypandoc>=1.1.3', 'PyYAML>=3.11'],
+TESTS_REQUIRE = ['nose', 'PyYAML']
