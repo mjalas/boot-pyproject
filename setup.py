@@ -1,18 +1,18 @@
 from setuptools import setup, find_packages
 from os import path
-import boot_pyproject.metadata as metadata
+import src.metadata as metadata
 
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
 long_description = ""
 
-try:
-    from pypandoc import convert
-    if path.exists(path.join(here, 'README.md')):
-        long_description = convert('README.md', 'rst')
-except ImportError:
-    print("warning: pypandoc module not found, could not convert Markdown to RST")
+# try:
+#     from pypandoc import convert
+#     if path.exists(path.join(here, 'README.md')):
+#         long_description = convert('README.md', 'rst')
+# except ImportError:
+#     print("warning: pypandoc module not found, could not convert Markdown to RST")
 
 setup(
     name=metadata.NAME,
@@ -36,7 +36,7 @@ setup(
     tests_require=metadata.TESTS_REQUIRE,
     entry_points={
         'console_scripts': [
-            'generate-json=scripts.generate_yaml:main',
+            'generate-pyproject-template=scripts.generate_yaml:main',
         ],
     },
 )

@@ -1,4 +1,4 @@
-from boot_pyproject.create_setup_file import SetupTemplateBuilder
+from src.create_setup_file import SetupTemplateBuilder
 
 
 def main():
