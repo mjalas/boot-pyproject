@@ -1,3 +1,4 @@
+"""Project metadata variables"""
 NAME = 'pyprojectgen'
 VERSION = '0.0.1'
 DESCRIPTION = 'Generates python project structure.'
