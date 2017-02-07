@@ -3,9 +3,10 @@ import yaml
 
 
 class SetupTemplateBuilder(object):
-
+    """Template builder class."""
     @staticmethod
     def create_setup_data():
+        """Creates a dictionary containing project metadata keys."""
         setup_data = {
             "metadata": {
                 "NAME": "",
@@ -38,10 +39,12 @@ class SetupTemplateBuilder(object):
 
     @staticmethod
     def build_json():
+        """Creates the json version of project metadata template."""
         result = SetupTemplateBuilder.create_setup_data()
         return json.dumps(result)
 
     @staticmethod
     def build_yaml():
+        """Creates the yaml version of project metadata template."""
         result = SetupTemplateBuilder.create_setup_data()
         return yaml.dump(result)

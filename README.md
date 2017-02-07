@@ -1,3 +1,3 @@
 # Python project generator
 
-Bootstrap python project with all necessary files required to create a python package.
+Generate base file structure for python project required for creating a python package.
