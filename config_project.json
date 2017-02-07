@@ -1,0 +1,30 @@
+{
+    "readme": {
+        "description": "",
+        "header": ""
+    },
+    "license": {
+        "file_comment": "File options: MIT, GPL3",
+        "name_comment": "Name options: MIT, GNU GPLv3",
+        "name": "",
+        "file": ""
+    },
+    "metadata": {
+        "EXCLUDE": [],
+        "DESCRIPTION": "",
+        "TESTS_REQUIRES": [
+            "nose"
+        ],
+        "CLASSIFIERS": [],
+        "URL": "",
+        "LICENSE": "",
+        "SETUP_REQUIRES": [],
+        "VERSION": "",
+        "INSTALL_REQUIRES": [],
+        "NAME": "",
+        "TEST_SUITE": "nose.collector",
+        "KEYWORDS": "",
+        "AUTHOR": "",
+        "AUTHOR_EMAIL": ""
+    }
+}

@@ -1,10 +1,27 @@
+"""Script for generating project template file."""
+import sys
 from src.create_setup_file import SetupTemplateBuilder
 
 
 def main():
-    with open("config_project.yaml", "w") as f:
+    """Main function of the template generator script."""
+    if "-j" in sys.argv:
+        generate_json()
+    else:
+        generate_yaml()
+
+def generate_json():
+    """Generates template in json."""
+    with open("config_project.json", "w") as stream:
+        content = SetupTemplateBuilder.build_json()
+        stream.write(content)
+
+
+def generate_yaml():
+    """Generates template in yaml."""
+    with open("config_project.yaml", "w") as stream:
         content = SetupTemplateBuilder.build_yaml()
-        f.write(content)
+        stream.write(content)
 
 
 if __name__ == '__main__':

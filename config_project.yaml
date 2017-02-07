@@ -1,0 +1,31 @@
+license:
+  file: ''
+  file_comment: 'File options: MIT, GPL3'
+  name: ''
+  name_comment: 'Name options: MIT, GNU GPLv3'
+metadata:
+  AUTHOR: ''
+  AUTHOR_EMAIL: ''
+  CLASSIFIERS:
+  - 'Development Status :: 3 - Alpha'
+  - 'Intended Audience :: Developers'
+  - 'Topic :: Software Development :: Libraries'
+  - 'License :: OSI Approved :: MIT License'
+  - 'Programming Language :: Python :: 3.5'
+  DESCRIPTION: ''
+  EXCLUDE:
+  - tests
+  KEYWORDS: ''
+  LICENSE: ''
+  NAME: ''
+  SETUP_REQUIRES:
+  - nose>=1.0
+  - coverage>=4.0.3
+  TESTS_REQUIRES:
+  - nose
+  TEST_SUITE: nose.collector
+  URL: ''
+  VERSION: ''
+readme:
+  description: ''
+  header: ''
