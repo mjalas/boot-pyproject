@@ -1,13 +1,14 @@
-from unittest import TestCase
-from src.create_setup_file import SetupTemplateBuilder
+"""Template builder module."""
 import json
 import yaml
 
 
-class TestSetupTemplateBuilder(TestCase):
-
-    def setUp(self):
-        self.expected_dict = {
+class TemplateBuilder(object):
+    """Template builder class."""
+    @staticmethod
+    def create_template_data():
+        """Creates a dictionary containing project metadata keys."""
+        template_data = {
             'metadata': {
                 'NAME': '',
                 'VERSION': '',
@@ -45,17 +46,16 @@ class TestSetupTemplateBuilder(TestCase):
                 'description': ''
             }
         }
+        return template_data
 
-    def test_create_setup_data(self):
-        result = SetupTemplateBuilder.create_setup_data()
-        self.assertEqual(self.expected_dict, result)
+    @staticmethod
+    def build_json():
+        """Creates the json version of project metadata template."""
+        result = TemplateBuilder.create_template_data()
+        return json.dumps(result, indent=4, separators=(',', ': '))
 
-    def test_create_setup_json(self):
-        result = SetupTemplateBuilder.build_json()
-        expected = json.dumps(self.expected_dict, indent=4, separators=(',', ': '))
-        self.assertEqual(expected, result)
-
-    def test_create_setup_yaml(self):
-        result = SetupTemplateBuilder.build_yaml()
-        expected = yaml.dump(self.expected_dict, default_flow_style=False)
-        self.assertEqual(expected, result)
+    @staticmethod
+    def build_yaml():
+        """Creates the yaml version of project metadata template."""
+        result = TemplateBuilder.create_template_data()
+        return yaml.dump(result, default_flow_style=False)

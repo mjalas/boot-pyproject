@@ -1,13 +1,13 @@
+from unittest import TestCase
+from src.template_builder import TemplateBuilder
 import json
 import yaml
 
 
-class SetupTemplateBuilder(object):
-    """Template builder class."""
-    @staticmethod
-    def create_setup_data():
-        """Creates a dictionary containing project metadata keys."""
-        setup_data = {
+class TestTemplateBuilder(TestCase):
+
+    def setUp(self):
+        self.expected_dict = {
             'metadata': {
                 'NAME': '',
                 'VERSION': '',
@@ -45,16 +45,17 @@ class SetupTemplateBuilder(object):
                 'description': ''
             }
         }
-        return setup_data
 
-    @staticmethod
-    def build_json():
-        """Creates the json version of project metadata template."""
-        result = SetupTemplateBuilder.create_setup_data()
-        return json.dumps(result, indent=4, separators=(',', ': '))
+    def test_create_setup_data(self):
+        result = TemplateBuilder.create_template_data()
+        self.assertEqual(self.expected_dict, result)
 
-    @staticmethod
-    def build_yaml():
-        """Creates the yaml version of project metadata template."""
-        result = SetupTemplateBuilder.create_setup_data()
-        return yaml.dump(result, default_flow_style=False)
+    def test_create_setup_json(self):
+        result = TemplateBuilder.build_json()
+        expected = json.dumps(self.expected_dict, indent=4, separators=(',', ': '))
+        self.assertEqual(expected, result)
+
+    def test_create_setup_yaml(self):
+        result = TemplateBuilder.build_yaml()
+        expected = yaml.dump(self.expected_dict, default_flow_style=False)
+        self.assertEqual(expected, result)

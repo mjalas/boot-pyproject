@@ -1,6 +1,6 @@
 """Script for generating project template file."""
 import sys
-from src.create_setup_file import SetupTemplateBuilder
+from src.template_builder import TemplateBuilder
 
 
 def main():
@@ -13,14 +13,14 @@ def main():
 def generate_json():
     """Generates template in json."""
     with open("config_project.json", "w") as stream:
-        content = SetupTemplateBuilder.build_json()
+        content = TemplateBuilder.build_json()
         stream.write(content)
 
 
 def generate_yaml():
     """Generates template in yaml."""
     with open("config_project.yaml", "w") as stream:
-        content = SetupTemplateBuilder.build_yaml()
+        content = TemplateBuilder.build_yaml()
         stream.write(content)
 
 
