@@ -6,12 +6,11 @@ class ProjectStructureGenerator(object):
     """Project structure generator class."""
 
     @staticmethod
-    def generate(root_path, project_name):
+    def generate(project_path):
         """Generates the project folder structure."""
-        project_base = root_path + '/' + project_name
-        src_path = project_base + '/src'
-        tests_path = project_base + '/tests'
-        create_folder(project_base)
+        src_path = project_path + '/src'
+        tests_path = project_path + '/tests'
+        create_folder(project_path)
         create_folder(src_path)
         Path(src_path + '/__init__.py').touch()
         create_folder(tests_path)

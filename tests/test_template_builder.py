@@ -35,10 +35,10 @@ class TestTemplateBuilder(TestCase):
                 'TESTS_REQUIRES': ['nose']
             },
             'license': {
-                'name': '',
-                'name_comment': 'Name options: MIT, GNU GPLv3',
                 'file': '',
-                'file_comment': 'File options: MIT, GPL3'
+                'file_comment': 'File options: MIT, GPL3, EMPTY',
+                'owner' : '',
+                'year' : ''
             },
             'readme': {
                 'header': '',

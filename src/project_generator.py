@@ -19,11 +19,12 @@ class ProjectGenerator(object):
 
     def generate(self, root_path):
         """Generates the project folder structure and files."""
-        ProjectStructureGenerator.generate(root_path, self.configuration.metadata['NAME'])
-        MetadataGenerator.generate(self.configuration.metadata, root_path + "/metadata.py")
-        SetupGenerator.generate(root_path + "/setup.py")
-        ToxGenerator.generate(root_path + "/.tox.ini")
-        GitignoreGenerator.generate(root_path + "/.gitignore")
-        ReadmeGenerator.generate(root_path + "/README.md", self.configuration.readme)
-        LicenseGenerator.generate(root_path + "/LICENSE", self.configuration.license)
-        NosercGenerator.generate(root_path + "/.noserc")
+        project_root = root_path + "/" + self.configuration.metadata['NAME']
+        ProjectStructureGenerator.generate(project_root)
+        MetadataGenerator.generate(self.configuration.metadata, project_root + "/metadata.py")
+        SetupGenerator.generate(project_root + "/setup.py")
+        ToxGenerator.generate(project_root + "/.tox.ini")
+        GitignoreGenerator.generate(project_root + "/.gitignore")
+        ReadmeGenerator.generate(project_root + "/README.md", self.configuration.readme)
+        LicenseGenerator.generate(project_root + "/LICENSE", self.configuration.license)
+        NosercGenerator.generate(project_root + "/.noserc")

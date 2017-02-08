@@ -10,8 +10,11 @@ class LicenseGenerator(object):
         """Generates the LICENSE file for the project."""
         if license_metadata['file'] == 'MIT':
             with open(file_path, 'w') as stream:
-                content = MIT_LICENSE_TEMPLATE.replace('<year>', license_metadata['year']) \
-                        .replace('<owner>', license_metadata['owner'])
+                content = MIT_LICENSE_TEMPLATE
+                if 'year' in license_metadata:
+                    content = content.replace('<year>', license_metadata['year'])
+                if 'owner' in license_metadata:
+                    content = content.replace('<owner>', license_metadata['owner'])
                 stream.write(content)
         elif license_metadata['file'] == 'GPL3':
             with open(file_path, 'w') as stream:
