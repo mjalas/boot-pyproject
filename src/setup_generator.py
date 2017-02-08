@@ -31,7 +31,7 @@ setup(
     packages=find_packages(exclude=[]),
     setup_requires=metadata.SETUP_REQUIRES,
     test_suite=metadata.TEST_SUITE,
-    tests_require=metadata.TESTS_REQUIRE,
+    tests_require=metadata.TESTS_REQUIRES,
     entry_points={
         'console_scripts': []
     },
