@@ -7,6 +7,7 @@ from src.tox_generator import ToxGenerator
 from src.gitignore_generator import GitignoreGenerator
 from src.readme_generator import ReadmeGenerator
 from src.license_generator import LicenseGenerator
+from src.noserc_generator import NosercGenerator
 
 class ProjectGenerator(object):
     """Project generator class."""
@@ -25,3 +26,4 @@ class ProjectGenerator(object):
         GitignoreGenerator.generate(root_path + "/.gitignore")
         ReadmeGenerator.generate(root_path + "/README.md", self.configuration.readme)
         LicenseGenerator.generate(root_path + "/LICENSE", self.configuration.license)
+        NosercGenerator.generate(root_path + "/.noserc")
