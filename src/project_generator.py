@@ -5,6 +5,7 @@ from src.metadata_generator import MetadataGenerator
 from src.setup_generator import SetupGenerator
 from src.tox_generator import ToxGenerator
 from src.gitignore_generator import GitignoreGenerator
+from src.readme_generator import ReadmeGenerator
 
 class ProjectGenerator(object):
     """Project generator class."""
@@ -21,3 +22,4 @@ class ProjectGenerator(object):
         SetupGenerator.generate(root_path + "/setup.py")
         ToxGenerator.generate(root_path + "/.tox.ini")
         GitignoreGenerator.generate(root_path + "/.gitignore")
+        ReadmeGenerator.generate(root_path + "/README.md", self.configuration.readme)
