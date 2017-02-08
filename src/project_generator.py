@@ -2,6 +2,8 @@
 from src.project_config import ProjectConfiguration
 from src.project_structure_generator import ProjectStructureGenerator
 from src.metadata_generator import MetadataGenerator
+from src.setup_generator import SetupGenerator
+from src.tox_generator import ToxGenerator
 
 class ProjectGenerator(object):
     """Project generator class."""
@@ -15,4 +17,5 @@ class ProjectGenerator(object):
         """Generates the project folder structure and files."""
         ProjectStructureGenerator.generate(root_path, self.configuration.metadata['NAME'])
         MetadataGenerator.generate(self.configuration.metadata, root_path + "/metadata.py")
-        
+        SetupGenerator.generate(root_path + "/setup.py")
+        ToxGenerator.generate(root_path + "/.tox.ini")
