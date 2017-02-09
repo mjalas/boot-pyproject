@@ -1,4 +1,5 @@
 # Python project generator
+[![PyPI version](https://badge.fury.io/py/pyproject.svg)](https://badge.fury.io/py/pyproject)
 [![Build Status](https://travis-ci.org/mjalas/pyprojectgen.svg?branch=master)](https://travis-ci.org/mjalas/pyprojectgen)
 
 Generate base file structure for python project required for creating a python package.
