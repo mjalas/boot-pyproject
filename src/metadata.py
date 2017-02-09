@@ -1,6 +1,6 @@
 """Project metadata variables"""
 NAME = 'pyprojectgen'
-VERSION = '0.0.3'
+VERSION = '0.0.4'
 DESCRIPTION = 'Generates python project structure.'
 URL = 'https://github.com/mjalas/pyprojectgen'
 AUTHOR = 'Mats Jalas'
@@ -14,18 +14,15 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 3.5',
 ]
 INSTALL_REQUIRES = [
-    'PyYAML>=3.11',
-    'command-line-parser>=0.0.6'
+    'PyYAML>=3.11'
 ]
 SETUP_REQUIRES = [
     'nose>=1.0',
     'coverage>=4.0.3',
-    'PyYAML>=3.11',
-    'command-line-parser>=0.0.6'
+    'PyYAML>=3.11'
 ],
 TESTS_REQUIRES = [
     'nose',
     'coverage>=4.0.3',
-    'PyYAML',
-    'command-line-parser'
+    'PyYAML'
 ]

@@ -1,8 +1,6 @@
 """Script for generating python project."""
-import sys
 import os
-from command_line_parser.option_parser import CommandLineOptionParser
-from command_line_parser.options import FileOption, OutputOption, Option
+import argparse
 from src.project_config import ProjectConfiguration
 from src.project_generator import ProjectGenerator
 from src.metadata import VERSION
@@ -11,32 +9,31 @@ from scripts.generate_template import generate_json, generate_yaml
 
 def main():
     """Python project generation main function."""
-    cmd_parser = get_command_line_parser()
-    cmd_parser.parseArguments(sys.argv)
- 
-    if cmd_parser.template:
-        if cmd_parser.template == "json":
+    parser = get_argparser()
+    arguments = parser.parse_args()
+    if arguments.template:
+        if arguments.template == "json":
             generate_json()
         else:
             generate_yaml()
-    elif cmd_parser.file:
-        conf_path = cmd_parser.file
-        root_path = get_root_path(cmd_parser)
+    elif arguments.file:
+        conf_path = arguments.file
+        root_path = get_root_path(arguments)
         generate_project(conf_path, root_path)
     else:
         print("Usage error: Either config file or template type must be given.")
         print("Run 'generate-project -h' for help.")
 
 
-def get_command_line_parser():
-    """Initializes the command line parser."""
-    file_option = FileOption()
-    output_option = OutputOption()
-    template_option = Option('-t', '--template', 'template', 'Generates configuration template in either yaml or json.')
-    options = [file_option, output_option, template_option]
-    usage = "usage: generate-project [-f config_file [-o output_path]] [-t <yaml/json>]"
-    return CommandLineOptionParser(options, usage, VERSION)
-
+def get_argparser():
+    """Initializes the command line argument parser."""
+    description = "Generate structure for python project."
+    parser = argparse.ArgumentParser(prog='generate-project', description=description)
+    parser.add_argument('--version', action='version', version='%(prog)s '+VERSION)
+    parser.add_argument('-f', '--file', dest='file', action='store')
+    parser.add_argument('-t', dest='template', action='store', choices=['yaml', 'json'])
+    parser.add_argument('-o', '--output', dest='output', action='store')
+    return parser
 
 def get_root_path(cmd_parser):
     """Get root path fro project generation."""
