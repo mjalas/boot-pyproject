@@ -36,7 +36,6 @@ setup(
     tests_require=metadata.TESTS_REQUIRE,
     entry_points={
         'console_scripts': [
-            'generate-pyproject-template=scripts.generate_template:main',
             'generate-project=scripts.generate_project:main'
         ],
     },
