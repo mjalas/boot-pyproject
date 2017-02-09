@@ -1,6 +1,6 @@
 """Project metadata variables"""
 NAME = 'pyprojectgen'
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 DESCRIPTION = 'Generates python project structure.'
 URL = 'https://github.com/mjalas/pyprojectgen'
 AUTHOR = 'Mats Jalas'
