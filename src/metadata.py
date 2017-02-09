@@ -18,6 +18,6 @@ SETUP_REQUIRES = [
     'coverage>=4.0.3',
     'pypandoc>=1.1.3',
     'PyYAML>=3.11',
-    'command-line-parser>=0.0.4'
+    'command-line-parser>=0.0.6'
 ],
 TESTS_REQUIRE = ['nose', 'PyYAML']
