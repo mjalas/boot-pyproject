@@ -20,7 +20,7 @@ class ProjectGenerator(object):
         self.root_path = ''
         self.project_root = "/" + self.configuration.metadata['NAME']
         self.paths = {
-            'metadata': '/metadata.py',
+            'metadata': '/src/metadata.py',
             'setup': '/setup.py',
             'tox': '/.tox.ini',
             'gitignore': '/.gitignore',

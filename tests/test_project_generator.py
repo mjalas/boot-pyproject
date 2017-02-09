@@ -25,15 +25,15 @@ class TestProjectGenerator(TestCase):
         self.__remove_file(self.file_path)
         self.__remove_file(self.tmp_path + "pyprojectgen/src/__init__.py")
         self.__remove_file(self.tmp_path + "pyprojectgen/tests/__init__.py")
-        self.__remove_dir(self.tmp_path + self.folder_structures[2])
-        self.__remove_dir(self.tmp_path + self.folder_structures[1])
         self.__remove_file(self.tmp_path + "pyprojectgen/.gitignore")
         self.__remove_file(self.tmp_path + "pyprojectgen/.noserc")
         self.__remove_file(self.tmp_path + "pyprojectgen/.tox.ini")
         self.__remove_file(self.tmp_path + "pyprojectgen/LICENSE")
         self.__remove_file(self.tmp_path + "pyprojectgen/README.md")
-        self.__remove_file(self.tmp_path + "pyprojectgen/metadata.py")
+        self.__remove_file(self.tmp_path + "pyprojectgen/src/metadata.py")
         self.__remove_file(self.tmp_path + "pyprojectgen/setup.py")
+        self.__remove_dir(self.tmp_path + self.folder_structures[2])
+        self.__remove_dir(self.tmp_path + self.folder_structures[1])
         self.__remove_dir(self.tmp_path + self.folder_structures[0])
 
     def __create_file(self, file_path):
@@ -70,7 +70,7 @@ class TestProjectGenerator(TestCase):
         self.assertTrue(os.path.exists(self.tmp_path + "pyprojectgen/.tox.ini"))
         self.assertTrue(os.path.exists(self.tmp_path + "pyprojectgen/LICENSE"))
         self.assertTrue(os.path.exists(self.tmp_path + "pyprojectgen/README.md"))
-        self.assertTrue(os.path.exists(self.tmp_path + "pyprojectgen/metadata.py"))
+        self.assertTrue(os.path.exists(self.tmp_path + "pyprojectgen/src/metadata.py"))
         self.assertTrue(os.path.exists(self.tmp_path + "pyprojectgen/setup.py"))
         self.assertTrue(os.path.exists(self.tmp_path + self.folder_structures[0]))
 
