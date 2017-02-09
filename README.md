@@ -6,7 +6,7 @@ Generate base file structure for python project required for creating a python p
 
 ## Installation
 
-Python 3.5+ is currently required for installing de tool.
+Python 3.5+ is currently required for installing the tool.
 There are currently two different ways of installing the application.
 
 Through pip:
