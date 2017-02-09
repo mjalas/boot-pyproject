@@ -16,7 +16,6 @@ CLASSIFIERS = [
 SETUP_REQUIRES = [
     'nose>=1.0',
     'coverage>=4.0.3',
-    'pypandoc>=1.1.3',
     'PyYAML>=3.11',
     'command-line-parser>=0.0.6'
 ],
