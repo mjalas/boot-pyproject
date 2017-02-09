@@ -2,12 +2,12 @@ from setuptools import setup, find_packages
 from os import path
 import src.metadata as metadata
 
-here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
 long_description = ""
 
 # try:
+#     here = path.abspath(path.dirname(__file__))
 #     from pypandoc import convert
 #     if path.exists(path.join(here, 'README.md')):
 #         long_description = convert('README.md', 'rst')
@@ -18,7 +18,7 @@ setup(
     name=metadata.NAME,
     version=metadata.VERSION,
     description=metadata.DESCRIPTION,
-    long_description=long_description,
+    #long_description=long_description,
     url=metadata.URL,
     author=metadata.AUTHOR,
     author_email=metadata.AUTHOR_EMAIL,
@@ -31,9 +31,10 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
     packages=find_packages(exclude=[]),
+    install_requires=metadata.INSTALL_REQUIRES,
     setup_requires=metadata.SETUP_REQUIRES,
     test_suite='nose.collector',
-    tests_require=metadata.TESTS_REQUIRE,
+    tests_require=metadata.TESTS_REQUIRES,
     entry_points={
         'console_scripts': [
             'generate-project=scripts.generate_project:main'

@@ -12,11 +12,19 @@ CLASSIFIERS = [
     'Topic :: Software Development :: Libraries',
     'License :: OSI Approved :: MIT License',
     'Programming Language :: Python :: 3.5',
-],
+]
+INSTALL_REQUIRES = [
+    'PyYAML>=3.11',
+    'command-line-parser>=0.0.6'
+]
 SETUP_REQUIRES = [
     'nose>=1.0',
     'coverage>=4.0.3',
     'PyYAML>=3.11',
     'command-line-parser>=0.0.6'
 ],
-TESTS_REQUIRE = ['nose', 'PyYAML']
+TESTS_REQUIRES = [
+    'nose',
+    'PyYAML',
+    'command-line-parser'
+]
