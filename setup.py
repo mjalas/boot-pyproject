@@ -1,18 +1,19 @@
 from setuptools import setup, find_packages
+import os
 from os import path
 import src.metadata as metadata
 
 
 # Get the long description from the README file
 long_description = ""
-
-# try:
-#     here = path.abspath(path.dirname(__file__))
-#     from pypandoc import convert
-#     if path.exists(path.join(here, 'README.md')):
-#         long_description = convert('README.md', 'rst')
-# except ImportError:
-#     print("warning: pypandoc module not found, could not convert Markdown to RST")
+if 'TRAVIS' in os.environ:
+    try:
+        here = path.abspath(path.dirname(__file__))
+        from pypandoc import convert
+        if path.exists(path.join(here, 'README.md')):
+            long_description = convert('README.md', 'rst')
+    except ImportError:
+        print("warning: pypandoc module not found, could not convert Markdown to RST")
 
 setup(
     name=metadata.NAME,

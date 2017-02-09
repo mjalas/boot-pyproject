@@ -25,6 +25,7 @@ SETUP_REQUIRES = [
 ],
 TESTS_REQUIRES = [
     'nose',
+    'coverage>=4.0.3',
     'PyYAML',
     'command-line-parser'
 ]
