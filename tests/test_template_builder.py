@@ -36,7 +36,7 @@ class TestTemplateBuilder(TestCase):
             },
             'license': {
                 'file': '',
-                'file_comment': 'File options: MIT, GPL3, EMPTY',
+                'file_comment': 'File options: MIT, GPL3, Apache, EMPTY',
                 'owner' : '',
                 'year' : ''
             },
