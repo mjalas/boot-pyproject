@@ -11,5 +11,4 @@ deploy:
   user: "$PYPI_USERNAME"
   password: "$PYPI_PASSWORD"
   on:
-    branch: master #Change to tags when releasing version 0.1 ->
-    #tags: true    
+    branch: master
