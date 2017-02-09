@@ -9,6 +9,7 @@ from src.readme_generator import ReadmeGenerator
 from src.license_generator import LicenseGenerator
 from src.noserc_generator import NosercGenerator
 
+
 class ProjectGenerator(object):
     """Project generator class."""
 
@@ -16,15 +17,35 @@ class ProjectGenerator(object):
         if not isinstance(configuration, ProjectConfiguration):
             raise ValueError('configuration is not of type ProjectConfiguration')
         self.configuration = configuration
+        self.root_path = ''
+        self.project_root = "/" + self.configuration.metadata['NAME']
+        self.paths = {
+            'metadata': '/metadata.py',
+            'setup': '/setup.py',
+            'tox': '/.tox.ini',
+            'gitignore': '/.gitignore',
+            'readme': '/README.md',
+            'license': '/LICENSE',
+            'noserc': '/.noserc'
+        }
+
+    def __get_path(self, key):
+        if key == 'root':
+            return self.project_root
+        if key in self.paths:
+            return self.project_root + self.paths[key]
 
     def generate(self, root_path):
         """Generates the project folder structure and files."""
-        project_root = root_path + "/" + self.configuration.metadata['NAME']
-        ProjectStructureGenerator.generate(project_root)
-        MetadataGenerator.generate(self.configuration.metadata, project_root + "/metadata.py")
-        SetupGenerator.generate(project_root + "/setup.py")
-        ToxGenerator.generate(project_root + "/.tox.ini")
-        GitignoreGenerator.generate(project_root + "/.gitignore")
-        ReadmeGenerator.generate(project_root + "/README.md", self.configuration.readme)
-        LicenseGenerator.generate(project_root + "/LICENSE", self.configuration.license)
-        NosercGenerator.generate(project_root + "/.noserc")
+        self.project_root = root_path + "/" + self.configuration.metadata['NAME']
+        ProjectStructureGenerator.generate(self.__get_path('root'))
+        MetadataGenerator.generate(self.configuration.metadata, self.__get_path('metadata'))
+        SetupGenerator.generate(self.__get_path('setup'))
+        ToxGenerator.generate(self.__get_path('tox'))
+        GitignoreGenerator.generate(self.__get_path('gitignore'))
+        if self.configuration.readme:
+            ReadmeGenerator.generate(self.__get_path('readme'), self.configuration.readme)
+        if self.configuration.license:
+            LicenseGenerator.generate(self.__get_path('license'), self.configuration.license)
+        NosercGenerator.generate(self.__get_path('noserc'))
+        self.root_path = ''
