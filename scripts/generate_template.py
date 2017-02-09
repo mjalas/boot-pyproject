@@ -19,7 +19,7 @@ def generate_json():
 
 def generate_yaml():
     """Generates template in yaml."""
-    with open("config_project.yaml", "w") as stream:
+    with open("config_project.yml", "w") as stream:
         content = TemplateBuilder.build_yaml()
         stream.write(content)
 
