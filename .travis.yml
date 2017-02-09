@@ -1,9 +1,9 @@
-sudo: false
+sudo: true
 language: python
 python:
   - "3.5"
 install: 
-  - apt-get install pandoc
+  - sudo apt-get install pandoc
   - pip install tox-travis
 script: tox -e travis
 deploy:
