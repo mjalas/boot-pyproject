@@ -2,6 +2,7 @@
 from pathlib import Path
 from src.file_folder_creators import create_folder
 
+
 class ProjectStructureGenerator(object):
     """Project structure generator class."""
 

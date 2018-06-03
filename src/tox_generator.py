@@ -19,6 +19,7 @@ commands=
     nosetests --with-coverage --cover-package=src
 """
 
+
 class ToxGenerator(object):
     """Tox.ini file generator class."""
 

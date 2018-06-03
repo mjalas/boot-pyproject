@@ -1,5 +1,6 @@
 """Metadata file generator module."""
 
+
 class MetadataGenerator(object):
     """Metadata file generator class."""
 

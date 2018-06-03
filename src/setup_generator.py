@@ -39,6 +39,7 @@ setup(
 )
 """
 
+
 class SetupGenerator(object):
     """Setup file generator class."""
 
