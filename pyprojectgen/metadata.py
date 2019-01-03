@@ -19,7 +19,8 @@ INSTALL_REQUIRES = [
 SETUP_REQUIRES = [
     'nose>=1.0',
     'coverage>=4.0.3',
-    'PyYAML>=3.11'
+    'PyYAML>=3.11',
+    'Click==7.0'
 ],
 TESTS_REQUIRES = [
     'nose',
