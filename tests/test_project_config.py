@@ -1,5 +1,5 @@
 from unittest import TestCase
-from src.project_config import ProjectConfiguration
+from pyprojectgen.project_config import ProjectConfiguration
 from tests.test_helpers import test_configuration, create_project_conf_file, remove_project_conf_file
 import os
 

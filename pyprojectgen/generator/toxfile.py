@@ -8,7 +8,7 @@ deps=
     nose>=1.0
     coverage>=4.0.3    
 commands=
-    nosetests --with-coverage --cover-package=src
+    nosetests --with-coverage --cover-package=pyprojectgen
 
 [testenv:travis]
 passenv = TRAVIS TRAVIS_JOB_ID TRAVIS_BRANCH
@@ -16,7 +16,7 @@ deps=
     nose>=1.0
     coverage>=4.0.3        
 commands=
-    nosetests --with-coverage --cover-package=src
+    nosetests --with-coverage --cover-package=pyprojectgen
 """
 
 

@@ -1,13 +1,13 @@
 """Project generator module."""
-from src.project_config import ProjectConfiguration
-from src.project_structure_generator import ProjectStructureGenerator
-from src.metadata_generator import MetadataGenerator
-from src.setup_generator import SetupGenerator
-from src.tox_generator import ToxGenerator
-from src.gitignore_generator import GitignoreGenerator
-from src.readme_generator import ReadmeGenerator
-from src.license_generator import LicenseGenerator
-from src.noserc_generator import NosercGenerator
+from pyprojectgen.project_config import ProjectConfiguration
+from pyprojectgen.generator.structure import StructureGenerator
+from pyprojectgen.generator.metadata import MetadataGenerator
+from pyprojectgen.generator.setupfile import SetupGenerator
+from pyprojectgen.generator.toxfile import ToxGenerator
+from pyprojectgen.generator.gitignore import GitignoreGenerator
+from pyprojectgen.generator.readme import ReadmeGenerator
+from pyprojectgen.generator.license import LicenseGenerator
+from pyprojectgen.generator.noserc import NosercGenerator
 
 
 class ProjectGenerator(object):
@@ -20,7 +20,7 @@ class ProjectGenerator(object):
         self.root_path = ''
         self.project_root = "/" + self.configuration.metadata['NAME']
         self.paths = {
-            'metadata': '/src/metadata.py',
+            'metadata': '/pyprojectgen/metadata.py',
             'setup': '/setup.py',
             'tox': '/.tox.ini',
             'gitignore': '/.gitignore',
@@ -38,7 +38,7 @@ class ProjectGenerator(object):
     def generate(self, root_path):
         """Generates the project folder structure and files."""
         self.project_root = root_path + "/" + self.configuration.metadata['NAME']
-        ProjectStructureGenerator.generate(self.__get_path('root'))
+        StructureGenerator.generate(self.__get_path('root'))
         MetadataGenerator.generate(self.configuration.metadata, self.__get_path('metadata'))
         SetupGenerator.generate(self.__get_path('setup'))
         ToxGenerator.generate(self.__get_path('tox'))

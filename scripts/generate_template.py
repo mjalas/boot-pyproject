@@ -1,6 +1,6 @@
 """Script for generating project template file."""
 import sys
-from src.template_builder import TemplateBuilder
+from pyprojectgen.template_builder import TemplateBuilder
 
 
 def main():

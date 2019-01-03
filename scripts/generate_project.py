@@ -1,9 +1,9 @@
 """Script for generating python project."""
 import os
 import argparse
-from src.project_config import ProjectConfiguration
-from src.project_generator import ProjectGenerator
-from src.metadata import VERSION
+from pyprojectgen.project_config import ProjectConfiguration
+from pyprojectgen.generator.project import ProjectGenerator
+from pyprojectgen.metadata import VERSION
 from scripts.generate_template import generate_json, generate_yaml
 
 

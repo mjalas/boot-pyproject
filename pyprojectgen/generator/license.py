@@ -1,8 +1,8 @@
 """License file generator module."""
 from pathlib import Path
-from src.license_templates import MIT_LICENSE_TEMPLATE
-from src.license_templates import GPL3_LICENSE_TEMPLATE
-from src.license_templates import APACHE_LICENSE_TEMPLATE
+from pyprojectgen.license_templates import MIT_LICENSE_TEMPLATE
+from pyprojectgen.license_templates import GPL3_LICENSE_TEMPLATE
+from pyprojectgen.license_templates import APACHE_LICENSE_TEMPLATE
 
 class LicenseGenerator(object):
     """License file generator class."""

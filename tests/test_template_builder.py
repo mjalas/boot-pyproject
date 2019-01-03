@@ -1,5 +1,5 @@
 from unittest import TestCase
-from src.template_builder import TemplateBuilder
+from pyprojectgen.template_builder import TemplateBuilder
 import json
 import yaml
 

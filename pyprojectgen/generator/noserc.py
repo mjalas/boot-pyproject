@@ -6,7 +6,7 @@ NOSERC_TEMPLATE = \
 verbosity=3
 with-doctest=1
 with-coverage=1
-cover-package=src
+cover-package=pyprojectgen
 """
 
 
