@@ -40,6 +40,7 @@ test_configuration = {
     }
 }
 
+
 def create_project_conf_file(conf_path, file_path, configuration):
     """Create conf file and folder."""
     if not os.path.exists(conf_path):
@@ -47,6 +48,7 @@ def create_project_conf_file(conf_path, file_path, configuration):
     with open(file_path, 'w') as stream:
         content = yaml.dump(configuration, default_flow_style=False)
         stream.write(content)
+
 
 def remove_project_conf_file(conf_path, file_path):
     """Remove conf file and folder."""
