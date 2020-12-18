@@ -2,9 +2,12 @@ sudo: true
 language: python
 python:
   - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8"
 install: 
   - sudo apt-get install pandoc
-  - pip install tox-travis pypandoc
+  - pip install tox-travis pypandoc poetry
 script: tox -e travis
 deploy:
   provider: pypi
